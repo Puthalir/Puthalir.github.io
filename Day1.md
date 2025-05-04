@@ -62,5 +62,3 @@ b) Did not try Indian food
 c) Tried both Indian and Mexican food
 d) Tried neither
 e) Tried either Indian or Mexican food
-
-![image](https://github.com/user-attachments/assets/72c46b75-ba26-400b-9718-e4077c0be9c7)
