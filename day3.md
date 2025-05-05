@@ -1,12 +1,16 @@
 ☁️ **Google Cloud Platform (GCP) Overview**
+
 🔹 **Project**
+
   A project in GCP is a logical container for resources (like APIs, storage, databases).
-  
+
   All billing, access control, and API usage are tied to a specific project.
 
 
 🔐 **Access Control in GCP**
+
 🔹 **IAM** (Identity and Access Management)
+
 Manages who can do what on which resources.
 
 **Roles**:
@@ -24,7 +28,9 @@ Manages who can do what on which resources.
   Attach to APIs, run services like Cloud Run, or authenticate with Dialogflow.
 
 🔌 **API Services and Usage**
+
 🔹 **Billing Based on Usage**
+
   GCP APIs and services charge based on actual use:
   
   E.g., number of queries, storage used, compute time, etc.
