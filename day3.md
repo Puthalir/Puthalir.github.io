@@ -199,3 +199,155 @@ Required:
   Connect on-prem APIs to GCP using the HTTP connector
 
 
+
+
+---
+
+## 🌐 **Networking Concepts (Cloud)**
+
+### 🔹 1. **Virtual Private Cloud (VPC)**
+
+A **VPC** is a private, isolated section of the cloud where you deploy and manage your resources (VMs, databases, etc.). It includes:
+
+* Subnets
+* Routing
+* Firewalls
+* IP ranges
+
+---
+
+### 🔹 2. **Deployment Modes**
+
+| Mode             | Description                                                                                  |
+| ---------------- | -------------------------------------------------------------------------------------------- |
+| **Default Mode** | The cloud provider automatically configures networking, firewall, etc.                       |
+| **Custom Mode**  | You manually configure settings like IP ranges, subnets, firewall rules. Gives more control. |
+
+---
+
+### 🔹 3. **Subnets**
+
+Subnets divide a VPC into smaller parts:
+
+* **Public Subnet** – has access to the internet.
+* **Private Subnet** – used for internal-only services.
+
+---
+
+### 🔹 4. **Port Numbers & Domain/IP Ranges**
+
+* **Port Numbers**: Identify network services (e.g., 80 = HTTP, 443 = HTTPS).
+* **Domain Range**: A group of websites (like `*.example.com`).
+* **IP Range**: A block of IPs (e.g., `192.168.1.0/24`).
+
+---
+
+### 🔹 5. **Firewall Rules**
+
+Control what traffic is allowed into or out of your VPC:
+
+* **Ingress**: Traffic coming in.
+* **Egress**: Traffic going out.
+* **Config Rules**: Define which IPs and ports are allowed/denied.
+* **Exclusion/Extension Access**: Limit access to specific users/services.
+
+---
+
+### 🔹 6. **Session-Based Login**
+
+Uses login sessions to control user access (via cookies, tokens). Often used in web apps and dashboards.
+
+---
+
+### 🔹 7. **IP Address**
+
+Every device/service in the network gets an IP (static or dynamic).
+
+---
+
+## 💾 **Cloud Storage Options**
+
+### 🔹 8. **Types of Storage**
+
+| Type               | Use Case                                                              |
+| ------------------ | --------------------------------------------------------------------- |
+| **Block Storage**  | Like a hard disk for VMs or DBs (e.g., GCP Persistent Disk, AWS EBS). |
+| **Object Storage** | For files, images, backups (e.g., AWS S3, GCP Cloud Storage).         |
+| **File Storage**   | Shared filesystem (e.g., NFS, Azure File Storage).                    |
+
+---
+
+### 🔹 9. **Service Account**
+
+A special identity (not a user) used by apps to interact with cloud services securely.
+
+* Used in automation, data pipelines, APIs.
+
+---
+
+### 🔹 10. **Content Account** (Likely Storage Account)
+
+A container for your storage resources, like:
+
+* Buckets
+* Disks
+* Filesystems
+
+---
+
+### 🔹 11. **Integrating Storage**
+
+| Location          | How to Integrate                                                                |
+| ----------------- | ------------------------------------------------------------------------------- |
+| **Inside Cloud**  | Mount storage to VMs or connect via internal API. Use service accounts.         |
+| **Outside Cloud** | Use signed URLs, public access, or VPN + firewall rules. Secure with IAM roles. |
+
+---
+
+## 🔄 **Pipeline Mechanisms**
+
+### 🔹 12. **What Pipelines to Use**
+
+Depends on your need:
+
+| Goal                | Tools                                    |
+| ------------------- | ---------------------------------------- |
+| Data movement (ETL) | Apache Airflow, GCP Dataflow, AWS Glue   |
+| CI/CD (deployment)  | GitHub Actions, GitLab CI, Jenkins       |
+| ML pipeline         | Vertex AI Pipelines, SageMaker Pipelines |
+| Custom processing   | Cloud Functions, Step Functions          |
+
+Pipelines automate:
+
+* Data extraction
+* Transforming data
+* Loading to storage or database
+* Deploying code or models
+
+---
+
+
+
+
+
+
+
+
+
+
+### 📊 **GCP Pipelines for External ("Outside") Integration**
+
+| **Use Case**                            | **Pipeline Mechanism**                           | **Why Use It**                                                                | **Example**                                  |
+| --------------------------------------- | ------------------------------------------------ | ----------------------------------------------------------------------------- | -------------------------------------------- |
+| Webhooks, third-party API triggers      | **Cloud Functions + Pub/Sub**                    | Lightweight, event-driven, easy to connect external systems                   | Receive external JSON and store in BigQuery  |
+| API sequencing or multi-step workflows  | **Workflows**                                    | Securely calls APIs in sequence, with conditions and retries                  | Call external API → enrich data → send email |
+| Scheduled external jobs (FTP/API)       | **Cloud Composer (Airflow)**                     | Python-based orchestration of complex workflows with retries and dependencies | Pull data from FTP → process → upload to GCS |
+| Long-running or scalable API tasks      | **Cloud Run**                                    | Stateless, containerized, good for handling batch jobs or large external data | Fetch API data hourly → write to BigQuery    |
+| Streaming data from external sources    | **Cloud Dataflow + Apache Beam**                 | Real-time data ingestion and transformation                                   | Read from Kafka topic → Transform → BigQuery |
+| Connect SaaS (Salesforce, Shopify, etc) | **Fivetran / Stitch (3rd-party)**                | Prebuilt connectors for fast ELT into BigQuery                                | Sync data from Salesforce to BigQuery daily  |
+| Access on-premises or other clouds      | **Cloud VPN / Interconnect + Composer/Dataflow** | Secure hybrid access to internal databases or servers                         | Fetch data from on-prem Oracle DB to GCS     |
+
+
+
+
+
