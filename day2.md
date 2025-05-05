@@ -113,3 +113,119 @@ Aggregation Example:
 In this example, the Engine object exists independently of the Car object.
 
 -----
+
+
+### 🔹 **Asynchronous Programming (async / await)**
+
+* **Purpose**: Handle long-running tasks (like web requests or file I/O) **without blocking** the main thread.
+* **Keywords**:
+
+  * `async def`: Defines an asynchronous function.
+  * `await`: Pauses the function until the awaited task is done.
+* **Benefit**: Allows your program to **continue running other tasks** while waiting.
+
+**Example**:
+
+```python
+import asyncio
+
+async def greet():
+    print("Hello")
+    await asyncio.sleep(2)  # simulates a long task
+    print("World")
+
+asyncio.run(greet())
+```
+
+---
+
+### 🔹 **Web Scraping Tools**
+
+#### ✅ **BeautifulSoup (BS)**
+
+* Used for parsing **HTML** and **XML** documents.
+* Helps extract data from web pages.
+
+```bash
+pip install beautifulsoup4
+```
+
+**Example**:
+
+```python
+from bs4 import BeautifulSoup
+html = "<h1>Hello</h1>"
+soup = BeautifulSoup(html, 'html.parser')
+print(soup.h1.text)  # Output: Hello
+```
+
+#### ✅ **Selenium**
+
+* Used for **browser automation**.
+* Good for scraping **JavaScript-heavy** or interactive websites.
+
+```bash
+pip install selenium
+```
+
+---
+
+### 🔹 **Environment Management**
+
+#### ✅ `venv` – Virtual Environment
+
+* Keeps project libraries **isolated** from your system’s global Python packages.
+
+```bash
+python -m venv env
+source env/bin/activate  # Mac/Linux
+env\Scripts\activate     # Windows
+```
+
+#### ✅ `pip` – Package Installer
+
+* Installs libraries from the Python Package Index (PyPI).
+
+```bash
+pip install numpy
+```
+
+* You can also save and install dependencies from a file:
+
+```bash
+pip freeze > requirements.txt
+pip install -r requirements.txt
+```
+
+#### ✅ `poetry` – Dependency & Environment Tool
+
+* More advanced than pip/venv.
+* Manages **dependencies, environments, and publishing**.
+
+```bash
+pip install poetry
+poetry init
+poetry install
+```
+
+---
+
+### ✅ Summary
+
+| Tool/Concept    | Use Case                                |
+| --------------- | --------------------------------------- |
+| `async/await`   | Handle long-running code (non-blocking) |
+| `BeautifulSoup` | Parse HTML/XML from web pages           |
+| `Selenium`      | Automate browser actions (JS websites)  |
+| `venv`          | Create isolated environments            |
+| `pip`           | Install Python packages                 |
+| `poetry`        | Advanced tool for managing projects     |
+
+
+
+
+
+
+
+
+
