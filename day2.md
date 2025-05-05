@@ -224,6 +224,7 @@ poetry install
 
 
 
+![image](https://github.com/user-attachments/assets/0dc9e39d-17dc-4957-82b2-4f9eb4070312)
 
 
 
