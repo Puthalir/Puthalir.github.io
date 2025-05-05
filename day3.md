@@ -39,7 +39,7 @@ Manages who can do what on which resources.
 
 
 
-**API Services **
+**API Services**
 
   | API / Service      | Purpose                                                                 |
   | ------------------ | ----------------------------------------------------------------------- |
@@ -188,7 +188,7 @@ Required:
 | 🧠 **Low/No Code**           | Ideal for both developers and citizen developers (via AppSheet)               |
 
 
-🔧** Common Use Cases**
+🔧**Common Use Cases**
   
   Sync Salesforce contacts into BigQuery
   
