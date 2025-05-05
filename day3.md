@@ -1,4 +1,4 @@
-☁️ **Google Cloud Platform (GCP) Overview**
+### ☁️ **Google Cloud Platform (GCP) Overview**
 
 🔹 **Project**
 
