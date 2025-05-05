@@ -1,21 +1,60 @@
+☁️ Google Cloud Platform (GCP) Overview
+🔹 Project
+  A project in GCP is a logical container for resources (like APIs, storage, databases).
+  
+  All billing, access control, and API usage are tied to a specific project.
 
 
+🔐 Access Control in GCP
+🔹 IAM (Identity and Access Management)
+Manages who can do what on which resources.
 
+Roles:
+
+  Primitive roles: Basic access (Owner, Editor, Viewer).
+  
+  Predefined roles: Granular, service-specific roles (e.g., BigQuery Data Viewer, Dialogflow Admin).
+  
+  Custom roles: You define specific permissions for custom needs.
+
+Service Account:
+
+  A special Google account used by apps or VMs to call GCP services.
+  
+  Attach to APIs, run services like Cloud Run, or authenticate with Dialogflow.
+
+🔌 API Services and Usage
+🔹 Billing Based on Usage
+  GCP APIs and services charge based on actual use:
+  
+  E.g., number of queries, storage used, compute time, etc.
+  
+  Each project must be linked to a Billing Account to use paid services.
 
 
 
 API Services 
 
+  | API / Service      | Purpose                                                                 |
+  | ------------------ | ----------------------------------------------------------------------- |
+  | **Dialogflow API** | Build conversational agents (chatbots, voicebots) using NLP             |
+  | **Cloud SQL API**  | Manage relational databases like MySQL/PostgreSQL in the cloud          |
+  | **BigQuery API**   | Run fast SQL queries on large-scale datasets (data warehouse)           |
+  | **Vertex AI API**  | Train, deploy, and manage machine learning models                       |
+  | **Cloud Run API**  | Deploy and scale containerized apps with HTTP endpoints automatically   |
+  | **Connectors API** | Connect GCP services to external systems (e.g., Salesforce, MySQL, etc) |
+
+
 Required:
 
 🤖 What is Dialogflow API?
-Dialogflow is Google’s Natural Language Understanding (NLU) platform for building conversational interfaces like chatbots, voice assistants, or IVR systems.
-
-Dialogflow ES (Essentials): Simple agents, easy to use, ideal for basic use cases.
-
-Dialogflow CX (Customer Experience): Advanced agents, suitable for large, complex, multi-turn conversations.
-
-The Dialogflow API allows developers to manage agents, intents, sessions, training data, and detect intent programmatically.
+  Dialogflow is Google’s Natural Language Understanding (NLU) platform for building conversational interfaces like chatbots, voice assistants, or IVR systems.
+  
+  Dialogflow ES (Essentials): Simple agents, easy to use, ideal for basic use cases.
+  
+  Dialogflow CX (Customer Experience): Advanced agents, suitable for large, complex, multi-turn conversations.
+  
+  The Dialogflow API allows developers to manage agents, intents, sessions, training data, and detect intent programmatically.
 
 📌 Reasons to Use Dialogflow API in GCP
 
@@ -44,14 +83,14 @@ The Dialogflow API allows developers to manage agents, intents, sessions, traini
 
 
 🔧 Use Cases
-Web or mobile apps that need a backend relational DB
-
-Migration of legacy MySQL/PostgreSQL/SQL Server databases
-
-Internal apps and dashboards
-
-Apps requiring structured data with ACID properties
-
+  Web or mobile apps that need a backend relational DB
+  
+  Migration of legacy MySQL/PostgreSQL/SQL Server databases
+  
+  Internal apps and dashboards
+  
+  Apps requiring structured data with ACID properties
+  
 
 📌 Reasons to Use BigQuery in GCP
 
@@ -67,16 +106,16 @@ Apps requiring structured data with ACID properties
 
 
 🔧 Use Cases
-Analyzing large datasets (e.g., sales, web traffic, logs)
-
-Building real-time dashboards and reports
-
-Integrating with AI/ML workflows
-
-Data lakehouse architecture
-
-Cloud-native ETL/ELT pipelines
-
+  Analyzing large datasets (e.g., sales, web traffic, logs)
+  
+  Building real-time dashboards and reports
+  
+  Integrating with AI/ML workflows
+  
+  Data lakehouse architecture
+  
+  Cloud-native ETL/ELT pipelines
+  
 
 📌 Reasons to Use Vertex AI in GCP
 
@@ -92,15 +131,15 @@ Cloud-native ETL/ELT pipelines
 
 
 🔧 Example Use Cases
-Predictive analytics for business metrics
-
-Image classification or object detection
-
-Natural Language Processing (chatbots, summarization)
-
-Time series forecasting
-
-Fraud detection and anomaly detection
+  Predictive analytics for business metrics
+  
+  Image classification or object detection
+  
+  Natural Language Processing (chatbots, summarization)
+  
+  Time series forecasting
+  
+  Fraud detection and anomaly detection
 
 📌 Reasons to Use Cloud Run in GCP
 
@@ -116,15 +155,15 @@ Fraud detection and anomaly detection
 
 
 🔧 Example Use Cases
-RESTful APIs
-
-Microservices
-
-Webhooks
-
-Background tasks
-
-ML model inference (paired with Vertex AI or TensorFlow)
+  RESTful APIs
+  
+  Microservices
+  
+  Webhooks
+  
+  Background tasks
+  
+  ML model inference (paired with Vertex AI or TensorFlow)
 
 📌 Reasons to Use Connectors API in GCP
 
@@ -139,13 +178,13 @@ ML model inference (paired with Vertex AI or TensorFlow)
 
 
 🔧 Common Use Cases
-Sync Salesforce contacts into BigQuery
-
-Fetch order status from SAP in Workflows
-
-Trigger workflows from ServiceNow
-
-Connect on-prem APIs to GCP using the HTTP connector
+  Sync Salesforce contacts into BigQuery
+  
+  Fetch order status from SAP in Workflows
+  
+  Trigger workflows from ServiceNow
+  
+  Connect on-prem APIs to GCP using the HTTP connector
 
 
 
