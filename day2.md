@@ -1,6 +1,6 @@
 
 -----
-🔹 1. Class
+🔹 1. **Class**
 A class is a blueprint for creating objects. It defines a set of attributes and methods that the created objects (instances) can have.
 
 
@@ -13,7 +13,7 @@ Example:
             self.name = name  # Instance attribute
             self.age = age    # Instance attribute
 
-🔹 2. Object
+🔹 2. **Object**
 An object is an instance of a class. It represents a specific implementation of the class and holds its own data.
 
 
@@ -25,7 +25,7 @@ Example:
     print(dog1.species)  # Output: Canine
 
 
-🔹 3. Inheritance
+🔹 3. **Inheritance**
 Inheritance allows a class (child class) to acquire properties and methods of another class (parent class), promoting code reuse.
 
 
@@ -36,7 +36,7 @@ Example:
             print("Labrador woofs")
 
 
-🔹 4. Polymorphism
+🔹 4. **Polymorphism**
 Polymorphism allows methods to have the same name but behave differently based on the object’s context.
 
 Example:
@@ -49,7 +49,7 @@ Example:
     for dog in dogs:
         dog.sound()
 
-🔹 5. Encapsulation
+🔹 5. **Encapsulation**
 Encapsulation is the bundling of data (attributes) and methods within a class, restricting access to some components to control interactions.
 
 
@@ -67,7 +67,7 @@ Example:
             if age > 0:
                 self.__age = age
 
-🔹 6. Abstraction
+🔹 6. **Abstraction**
 Abstraction hides the internal implementation details while exposing only the necessary functionality. It helps focus on "what to do" rather than "how to do it."
 or 
 Abstraction hides the internal implementation details while exposing only the necessary functionality.
@@ -87,7 +87,7 @@ Example:
 
 
 
-7. Aggregation vs. Composition
+7. **Aggregation vs. Composition**
 Aggregation: Represents a "has-a" relationship where the child can exist independently of the parent.
 
 Composition: Represents a "has-a" relationship where the child cannot exist independently of the parent.
