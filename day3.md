@@ -1,30 +1,30 @@
-☁️ Google Cloud Platform (GCP) Overview
-🔹 Project
+☁️ **Google Cloud Platform (GCP) Overview**
+🔹 **Project**
   A project in GCP is a logical container for resources (like APIs, storage, databases).
   
   All billing, access control, and API usage are tied to a specific project.
 
 
-🔐 Access Control in GCP
-🔹 IAM (Identity and Access Management)
+🔐 **Access Control in GCP**
+🔹 **IAM** (Identity and Access Management)
 Manages who can do what on which resources.
 
-Roles:
+**Roles**:
 
-  Primitive roles: Basic access (Owner, Editor, Viewer).
+  **Primitive roles**: Basic access (Owner, Editor, Viewer).
   
-  Predefined roles: Granular, service-specific roles (e.g., BigQuery Data Viewer, Dialogflow Admin).
+  **Predefined roles**: Granular, service-specific roles (e.g., BigQuery Data Viewer, Dialogflow Admin).
   
-  Custom roles: You define specific permissions for custom needs.
+  **Custom roles**: You define specific permissions for custom needs.
 
-Service Account:
+**Service Account**:
 
   A special Google account used by apps or VMs to call GCP services.
   
   Attach to APIs, run services like Cloud Run, or authenticate with Dialogflow.
 
-🔌 API Services and Usage
-🔹 Billing Based on Usage
+🔌 **API Services and Usage**
+🔹 **Billing Based on Usage**
   GCP APIs and services charge based on actual use:
   
   E.g., number of queries, storage used, compute time, etc.
@@ -33,7 +33,7 @@ Service Account:
 
 
 
-API Services 
+**API Services **
 
   | API / Service      | Purpose                                                                 |
   | ------------------ | ----------------------------------------------------------------------- |
@@ -47,16 +47,17 @@ API Services
 
 Required:
 
-🤖 What is Dialogflow API?
+🤖 What is **Dialogflow** API?
+
   Dialogflow is Google’s Natural Language Understanding (NLU) platform for building conversational interfaces like chatbots, voice assistants, or IVR systems.
   
-  Dialogflow ES (Essentials): Simple agents, easy to use, ideal for basic use cases.
+  Dialogflow **ES** (Essentials): Simple agents, easy to use, ideal for basic use cases.
   
-  Dialogflow CX (Customer Experience): Advanced agents, suitable for large, complex, multi-turn conversations.
+  Dialogflow **CX** (Customer Experience): Advanced agents, suitable for large, complex, multi-turn conversations.
   
   The Dialogflow API allows developers to manage agents, intents, sessions, training data, and detect intent programmatically.
 
-📌 Reasons to Use Dialogflow API in GCP
+📌 **Reasons to Use Dialogflow API in GCP**
 
 | Feature                       | Benefit                                                        |
 | ----------------------------- | -------------------------------------------------------------- |
@@ -69,7 +70,7 @@ Required:
 
 
 
-📌 Reasons to Use Cloud SQL in GCP
+📌 **Reasons to Use Cloud SQL in GCP**
 
 | Benefit                        | Explanation                                                      |
 | ------------------------------ | ---------------------------------------------------------------- |
@@ -82,7 +83,8 @@ Required:
 | ✅ **Performance Insights**     | See slow queries, connections, and tuning suggestions.           |
 
 
-🔧 Use Cases
+🔧 **Use Cases**
+
   Web or mobile apps that need a backend relational DB
   
   Migration of legacy MySQL/PostgreSQL/SQL Server databases
@@ -92,7 +94,7 @@ Required:
   Apps requiring structured data with ACID properties
   
 
-📌 Reasons to Use BigQuery in GCP
+📌 **Reasons to Use BigQuery in GCP**
 
 | Feature                            | Benefit                                                  |
 | ---------------------------------- | -------------------------------------------------------- |
@@ -105,7 +107,8 @@ Required:
 | ✅ **Secure & Compliant**           | IAM, encryption, and audit logs built-in.                |
 
 
-🔧 Use Cases
+🔧 **Use Cases**
+
   Analyzing large datasets (e.g., sales, web traffic, logs)
   
   Building real-time dashboards and reports
@@ -117,7 +120,7 @@ Required:
   Cloud-native ETL/ELT pipelines
   
 
-📌 Reasons to Use Vertex AI in GCP
+📌 **Reasons to Use Vertex AI in GCP**
 
 | Feature                              | Benefit                                                            |
 | ------------------------------------ | ------------------------------------------------------------------ |
@@ -130,7 +133,8 @@ Required:
 | ✅ **Secure & Compliant**             | Role-based access with IAM, logging, and encryption                |
 
 
-🔧 Example Use Cases
+🔧 **Example Use Cases**
+
   Predictive analytics for business metrics
   
   Image classification or object detection
@@ -141,7 +145,7 @@ Required:
   
   Fraud detection and anomaly detection
 
-📌 Reasons to Use Cloud Run in GCP
+📌 **Reasons to Use Cloud Run in GCP**
 
 | Feature                 | Description                                           |
 | ----------------------- | ----------------------------------------------------- |
@@ -154,7 +158,8 @@ Required:
 | ✅ **Secure by Default** | HTTPS endpoints, IAM integration, secrets management  |
 
 
-🔧 Example Use Cases
+🔧 **Example Use Cases**
+
   RESTful APIs
   
   Microservices
@@ -165,7 +170,7 @@ Required:
   
   ML model inference (paired with Vertex AI or TensorFlow)
 
-📌 Reasons to Use Connectors API in GCP
+📌 **Reasons to Use Connectors API in GCP**
 
 | Benefit                      | Explanation                                                                   |
 | ---------------------------- | ----------------------------------------------------------------------------- |
@@ -177,7 +182,8 @@ Required:
 | 🧠 **Low/No Code**           | Ideal for both developers and citizen developers (via AppSheet)               |
 
 
-🔧 Common Use Cases
+🔧** Common Use Cases**
+  
   Sync Salesforce contacts into BigQuery
   
   Fetch order status from SAP in Workflows
