@@ -86,9 +86,104 @@ Example: A = {1, 2, 3, 4}
 
 ![image](https://github.com/user-attachments/assets/e8ab5b1d-e3aa-4d99-bf1e-840bec76c995)
 
+----
 
+🔹 Set Operations
+Union (A ∪ B): All elements in A or B (or both)
 
+Intersection (A ∩ B): Elements in both A and B
 
+Difference (A − B): Elements in A but not in B
+
+Complement (A′): All elements in the universal set not in A
+
+----
+
+🔹 1. Python Function with Default Parameters
+Your code has a few issues — here’s the corrected version:
+
+python
+Copy code
+def square(num, age=28):
+    return num ** 2
+
+print(square(3))  # Output: 9
+age=28 is a default parameter, but it's not used here.
+
+num ** 2 squares the number.
+
+🔹 2. Using Lambda Function
+This is your code:
+
+python
+Copy code
+addition = lambda x: x + x
+print(addition(5))  # Output: 10
+This is an anonymous function using lambda.
+
+lambda x: x + x means "double the input".
+
+🔹 3. OOP Concepts in Python
+Here are the main Object-Oriented Programming (OOP) concepts with short examples:
+
+✅ __init__ – Constructor
+Used to initialize object properties.
+
+python
+Copy code
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+p = Person("Alice")
+print(p.name)  # Output: Alice
+✅ __del__ – Destructor
+Called when an object is deleted.
+
+python
+Copy code
+class Person:
+    def __del__(self):
+        print("Destructor called")
+
+p = Person()
+del p  # Will trigger the destructor
+✅ @decorator – Decorators
+Used to monitor/modify functions.
+
+python
+Copy code
+def decorator(func):
+    def wrapper():
+        print("Before the function runs")
+        func()
+        print("After the function runs")
+    return wrapper
+
+@decorator
+def greet():
+    print("Hello!")
+
+greet()
+✅ Getter and Setter
+python
+Copy code
+class Student:
+    def __init__(self):
+        self._age = 0
+
+    def get_age(self):
+        return self._age
+
+    def set_age(self, age):
+        if age > 0:
+            self._age = age
+
+s = Student()
+s.set_age(25)
+print(s.get_age())  # Output: 25
+
+----
 
 
 
