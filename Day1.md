@@ -3,81 +3,81 @@ hello world!
 
 ----
 
-🔹 Variable
+🔹 **Variable**
 A variable is a symbol (like x or y) used to represent a value that can change.
 
-🔹 Random Variable
+🔹 **Random Variable**
 A random variable is a variable whose value is the outcome of a random process.
 
 Example: Let X be the number of heads when flipping 2 coins.
 
-🔹 Experiment
+🔹 **Experiment**
 An experiment in probability is a process or action that leads to a result.
 
 Example: Tossing a coin, rolling a die.
 
-🔹 Random Experiment
+🔹 **Random Experiment**
 An experiment where the outcome cannot be predicted with certainty.
 
 Example: Rolling a die — you don’t know which number you’ll get.
 
-🔹 Outcome
+🔹 **Outcome**
 An outcome is a single possible result of an experiment.
 
 Example: Getting a 5 when rolling a die.
 
-🔹 Basic Outcome
+🔹 **Basic Outcome**
 Same as an elementary outcome — a single result in the sample space.
 
 Example: Getting tails in one coin flip.
 
-🔹 Sample Outcome / Sample Space
+🔹 **Sample Outcome** / Sample Space
 Sample Space (S): The set of all possible outcomes of an experiment.
 
 Example: For a coin flip → S = {Heads, Tails}
 
-🔹 Discrete Random Variable
+🔹 **Discrete Random Variable**
 Takes on countable values (usually whole numbers).
 
 Example: Number of heads in 3 coin tosses → 0, 1, 2, 3.
 
-🔹 Continuous Random Variable
+🔹 **Continuous Random Variable**
 Takes on infinite values in a range (like real numbers).
 
 Example: Height, time, weight.
 
-🔹 Events
+🔹 **Events**
 An event is one or more outcomes of an experiment.
 
 Example: Rolling an even number → {2, 4, 6}
 
-🔹 Function / f(x)
+🔹 **Function** / f(x)
 A function assigns each input (x) to a specific output.
 
 In probability: often refers to the Probability Function.
 
-🔹 Probability Mass Function (PMF)
+🔹 **Probability Mass Function** (PMF)
 Used for discrete random variables. It gives the probability of each possible value.
 
 Notation: P(X = x)
 
 Example: P(X = 2) = 0.3
 
-🔹 Cumulative Distribution Function (CDF)
+🔹 **Cumulative Distribution Function** (CDF)
 Gives the probability that a random variable is less than or equal to a value.
 
 Notation: F(x) = P(X ≤ x)
 
 Used for both discrete and continuous variables.
 
-🔹 Probability Density Function (PDF)
+🔹 **Probability Density Function** (PDF)
 Used for continuous random variables.
 
 Describes the likelihood of the variable falling within a range, not a specific point.
 
 Notation: f(x)
 
-🔹 Set
+🔹 **Set**
 A collection of well-defined elements.
 
 Example: A = {1, 2, 3, 4}
@@ -88,7 +88,7 @@ Example: A = {1, 2, 3, 4}
 
 ----
 
-🔹 Set Operations
+🔹 **Set Operations**
 Union (A ∪ B): All elements in A or B (or both)
 
 Intersection (A ∩ B): Elements in both A and B
@@ -99,7 +99,7 @@ Complement (A′): All elements in the universal set not in A
 
 ----
 
-🔹 1. Python Function with Default Parameters
+🔹 1. **Python Function with Default Parameters**
 Your code has a few issues — here’s the corrected version:
 
         def square(num, age=28):
@@ -112,7 +112,7 @@ age=28 is a default parameter, but it's not used here.
 
 num ** 2 squares the number.
 
-🔹 2. Using Lambda Function
+🔹 2. Using **Lambda** Function
 This is your code:
 
 
@@ -124,10 +124,10 @@ This is an anonymous function using lambda.
 
 lambda x: x + x means "double the input".
 
-🔹 3. OOP Concepts in Python
+🔹 3. **OOP Concepts in Python**
 Here are the main Object-Oriented Programming (OOP) concepts with short examples:
 
-✅ __init__ – Constructor
+✅ **__init__** – Constructor
 Used to initialize object properties.
 
 
@@ -139,7 +139,7 @@ Used to initialize object properties.
         print(p.name)  # Output: Alice
 
 
-✅ __del__ – Destructor
+✅ **__del__** – Destructor
 Called when an object is deleted.
 
 
@@ -151,7 +151,7 @@ Called when an object is deleted.
         del p  # Will trigger the destructor
 
 
-✅ @decorator – Decorators
+✅ **@decorator** – Decorators
 Used to monitor/modify functions.
 
 
@@ -169,7 +169,7 @@ Used to monitor/modify functions.
         greet()
 
 
-✅ Getter and Setter
+✅ **Getter and Setter**
 
     class Student:
         def __init__(self):
