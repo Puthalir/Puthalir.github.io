@@ -96,7 +96,8 @@ App or IoT → Pub/Sub → BigQuery (Analytics)
 
 ---
 
-🌐 Overview: Vertex AI Workflow on GCP
+## 🌐 Overview: Vertex AI Workflow on GCP
+
 Here’s a simplified flow of what you're building:
 
     Raw Data (CSV / JSON / SQL) 
@@ -109,7 +110,7 @@ Here’s a simplified flow of what you're building:
 
 
 
-🔹 STAGE 1: Load & Analyze Data
+## 🔹 STAGE 1: Load & Analyze Data
 
 | Task                              | GCP Tool                | Description                            |
 | --------------------------------- | ----------------------- | -------------------------------------- |
@@ -118,7 +119,7 @@ Here’s a simplified flow of what you're building:
 | Prepare for training              | **Dataflow / BigQuery** | Clean, transform, and extract features |
 
 
-🔹 STAGE 2: Prepare & Train (ML Pipeline)
+## **🔹 STAGE 2: Prepare & Train (ML Pipeline)**
 
 | Task                  | GCP Tool                      | Description                                                   |
 | --------------------- | ----------------------------- | ------------------------------------------------------------- |
@@ -129,7 +130,7 @@ Here’s a simplified flow of what you're building:
 
 
 
-🔹 STAGE 3: Model Evaluation
+## 🔹 STAGE 3: Model Evaluation
 
 | Task                  | GCP Tool                     | Description                            |
 | --------------------- | ---------------------------- | -------------------------------------- |
@@ -137,7 +138,7 @@ Here’s a simplified flow of what you're building:
 | Interpret predictions | **Vertex AI Explainable AI** | See feature importance, bias detection |
 
 
-🔹 STAGE 4: Prediction & Deployment
+## 🔹 STAGE 4: Prediction & Deployment
 
 | Task                | GCP Tool                   | Description                             |
 | ------------------- | -------------------------- | --------------------------------------- |
@@ -147,7 +148,7 @@ Here’s a simplified flow of what you're building:
 
 
 
-🔹 STAGE 5: Advanced LLMs + Gemini (Optional)
+## 🔹 STAGE 5: Advanced LLMs + Gemini (Optional)
 
 | Task                                   | GCP Tool                          | Description                                                     |
 | -------------------------------------- | --------------------------------- | --------------------------------------------------------------- |
