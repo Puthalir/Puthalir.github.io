@@ -171,3 +171,6 @@ App or IoT → Pub/Sub → BigQuery (Analytics)
 
 
 
+![image](https://github.com/user-attachments/assets/efa76d87-bad7-4e4e-a8fa-23db5901714d)
+
+
