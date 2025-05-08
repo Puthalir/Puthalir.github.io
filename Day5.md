@@ -98,19 +98,22 @@ App or IoT → Pub/Sub → BigQuery (Analytics)
 
 ## 🌐 Overview: Vertex AI Workflow on GCP
 
+
 Here’s a simplified flow of what you're building:
 
-    Raw Data (CSV / JSON / SQL) 
+    **Raw Data** (CSV / JSON / SQL) 
        ↓
-    BigQuery / Cloud Storage (Load + Analyze)
+    **BigQuery** / Cloud Storage (Load + Analyze)
        ↓
-    Vertex AI Pipelines (Prepare, Train, Evaluate, Predict)
+    **Vertex AI Pipelines** (Prepare, Train, Evaluate, Predict)
        ↓
-    LLM / Gemini (Advanced Use Cases)
+    **LLM / Gemini** (Advanced Use Cases)
 
 
 
 ## 🔹 STAGE 1: Load & Analyze Data
+
+
 
 | Task                              | GCP Tool                | Description                            |
 | --------------------------------- | ----------------------- | -------------------------------------- |
@@ -119,7 +122,9 @@ Here’s a simplified flow of what you're building:
 | Prepare for training              | **Dataflow / BigQuery** | Clean, transform, and extract features |
 
 
-## **🔹 STAGE 2: Prepare & Train (ML Pipeline)**
+
+## 🔹 STAGE 2: Prepare & Train (ML Pipeline)
+
 
 | Task                  | GCP Tool                      | Description                                                   |
 | --------------------- | ----------------------------- | ------------------------------------------------------------- |
@@ -130,7 +135,10 @@ Here’s a simplified flow of what you're building:
 
 
 
+
 ## 🔹 STAGE 3: Model Evaluation
+
+
 
 | Task                  | GCP Tool                     | Description                            |
 | --------------------- | ---------------------------- | -------------------------------------- |
@@ -140,6 +148,8 @@ Here’s a simplified flow of what you're building:
 
 ## 🔹 STAGE 4: Prediction & Deployment
 
+
+
 | Task                | GCP Tool                   | Description                             |
 | ------------------- | -------------------------- | --------------------------------------- |
 | Deploy model        | **Vertex AI Endpoint**     | Serve REST API for real-time prediction |
@@ -148,7 +158,10 @@ Here’s a simplified flow of what you're building:
 
 
 
+
 ## 🔹 STAGE 5: Advanced LLMs + Gemini (Optional)
+
+
 
 | Task                                   | GCP Tool                          | Description                                                     |
 | -------------------------------------- | --------------------------------- | --------------------------------------------------------------- |
