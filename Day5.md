@@ -99,15 +99,15 @@ App or IoT → Pub/Sub → BigQuery (Analytics)
 ## 🌐 Overview: Vertex AI Workflow on GCP
 
 
-Here’s a simplified flow of what you're building:
-
-    **Raw Data** (CSV / JSON / SQL) 
-       ↓
-    **BigQuery** / Cloud Storage (Load + Analyze)
-       ↓
-    **Vertex AI Pipelines** (Prepare, Train, Evaluate, Predict)
-       ↓
-    **LLM / Gemini** (Advanced Use Cases)
+  Here’s a simplified flow of what you're building:
+  
+      Raw Data (CSV / JSON / SQL) 
+         ↓
+      BigQuery / Cloud Storage (Load + Analyze)
+         ↓
+      Vertex AI Pipelines (Prepare, Train, Evaluate, Predict)
+         ↓
+      LLM / Gemini (Advanced Use Cases)
 
 
 
