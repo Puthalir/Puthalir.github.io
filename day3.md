@@ -1,4 +1,4 @@
-### ☁️ **Google Cloud Platform (GCP) Overview**
+# ☁️ **Google Cloud Platform (GCP) Overview**
 
 🔹 **Project**
 
@@ -7,13 +7,13 @@
   All billing, access control, and API usage are tied to a specific project.
 
 
-🔐 **Access Control in GCP**
+## 🔐 **Access Control in GCP**
 
-🔹 **IAM** (Identity and Access Management)
+### 🔹 **IAM** (Identity and Access Management)
 
 Manages who can do what on which resources.
 
-**Roles**:
+### **Roles**:
 
   **Primitive roles**: Basic access (Owner, Editor, Viewer).
   
@@ -21,13 +21,13 @@ Manages who can do what on which resources.
   
   **Custom roles**: You define specific permissions for custom needs.
 
-**Service Account**:
+### **Service Account**:
 
   A special Google account used by apps or VMs to call GCP services.
   
   Attach to APIs, run services like Cloud Run, or authenticate with Dialogflow.
 
-🔌 **API Services and Usage**
+### 🔌 **API Services and Usage**
 
 🔹 **Billing Based on Usage**
 
@@ -39,7 +39,7 @@ Manages who can do what on which resources.
 
 
 
-**API Services**
+### **API Services**
 
   | API / Service      | Purpose                                                                 |
   | ------------------ | ----------------------------------------------------------------------- |
@@ -63,7 +63,7 @@ Required:
   
   The Dialogflow API allows developers to manage agents, intents, sessions, training data, and detect intent programmatically.
 
-📌 **Reasons to Use Dialogflow API in GCP**
+### 📌 **Reasons to Use Dialogflow API in GCP**
 
 | Feature                       | Benefit                                                        |
 | ----------------------------- | -------------------------------------------------------------- |
@@ -76,7 +76,7 @@ Required:
 
 
 
-📌 **Reasons to Use Cloud SQL in GCP**
+### 📌 **Reasons to Use Cloud SQL in GCP**
 
 | Benefit                        | Explanation                                                      |
 | ------------------------------ | ---------------------------------------------------------------- |
@@ -89,7 +89,7 @@ Required:
 | ✅ **Performance Insights**     | See slow queries, connections, and tuning suggestions.           |
 
 
-🔧 **Use Cases**
+### 🔧 **Use Cases**
 
   Web or mobile apps that need a backend relational DB
   
@@ -100,7 +100,7 @@ Required:
   Apps requiring structured data with ACID properties
   
 
-📌 **Reasons to Use BigQuery in GCP**
+### 📌 **Reasons to Use BigQuery in GCP**
 
 | Feature                            | Benefit                                                  |
 | ---------------------------------- | -------------------------------------------------------- |
@@ -126,7 +126,7 @@ Required:
   Cloud-native ETL/ELT pipelines
   
 
-📌 **Reasons to Use Vertex AI in GCP**
+### 📌 **Reasons to Use Vertex AI in GCP**
 
 | Feature                              | Benefit                                                            |
 | ------------------------------------ | ------------------------------------------------------------------ |
@@ -151,7 +151,7 @@ Required:
   
   Fraud detection and anomaly detection
 
-📌 **Reasons to Use Cloud Run in GCP**
+### 📌 **Reasons to Use Cloud Run in GCP**
 
 | Feature                 | Description                                           |
 | ----------------------- | ----------------------------------------------------- |
@@ -176,7 +176,7 @@ Required:
   
   ML model inference (paired with Vertex AI or TensorFlow)
 
-📌 **Reasons to Use Connectors API in GCP**
+### 📌 **Reasons to Use Connectors API in GCP**
 
 | Benefit                      | Explanation                                                                   |
 | ---------------------------- | ----------------------------------------------------------------------------- |
