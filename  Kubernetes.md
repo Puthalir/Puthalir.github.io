@@ -121,3 +121,16 @@
 * **Networking**: Kubernetes uses a flat networking model where all Pods can communicate with each other without Network Address Translation (NAT). This is achieved through the use of virtual networks and network plugins.([Spacelift][3])
 
 ---
+
+
+🐳 Docker Quick Reference
+
+| Command                      | Description                             |
+| ---------------------------- | --------------------------------------- |
+| docker ps                    | List running containers                 |
+| docker ps -a                 | List all containers (including stopped) |
+| docker kill \<container\_id> | Force-stop a running container          |
+| docker logs \<container\_id> | View container logs                     |
+| docker exec -it <id> bash    | Access container shell                  |
+
+
