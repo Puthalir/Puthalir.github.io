@@ -116,3 +116,102 @@ There are two main versions:
 
 ---
 
+
+### **Webhook in Dialogflow CX**
+
+1. **Create Webhook in Dialogflow CX Console**:
+
+   * Go to **Manage > Webhooks** in Dialogflow CX.
+   * Click **Create Webhook**.
+   * Set the **Webhook URL** (e.g., your Cloud Run or API endpoint).
+   * If needed, configure authentication (API key, token, etc.).
+   * Click **Save**.
+
+2. **Link Webhook to Intent/Route**:
+
+   * Go to **Intents** or **Routes** in your Dialogflow CX agent.
+   * In **Fulfillment**, select **Webhook** and choose the webhook you created.
+
+3. **Pass Parameters to Webhook**:
+
+   * Extract parameters from the user input (e.g., entities).
+   * In the webhook request, include the parameters:
+
+   Example JSON payload:
+
+   ```json
+   {
+     "sessionInfo": {
+       "session": "projects/{project-id}/locations/{location-id}/agents/{agent-id}/sessions/{session-id}",
+       "parameters": {
+         "param1": "$session.params.param1",
+         "param2": "$session.params.param2"
+       }
+     }
+   }
+   ```
+
+4. **Detect Intent in Webhook**:
+
+   * In your backend (e.g., Flask), handle the webhook request and detect intent based on parameters.
+
+   Example Python (Flask) backend:
+
+   ```python
+   from flask import Flask, request, jsonify
+
+   app = Flask(__name__)
+
+   @app.route('/webhook', methods=['POST'])
+   def webhook():
+       req = request.get_json()
+
+       param1 = req['sessionInfo']['parameters'].get('param1')
+       param2 = req['sessionInfo']['parameters'].get('param2')
+
+       # Detect intent based on parameters
+       if param1 == 'some_value':
+           response = {"fulfillment_response": {"messages": [{"text": {"text": ["Intent detected"]}}]}}
+       else:
+           response = {"fulfillment_response": {"messages": [{"text": {"text": ["Other intent"]}}]}}
+       
+       return jsonify(response)
+
+   if __name__ == '__main__':
+       app.run(debug=True)
+   ```
+
+5. **Return Response from Webhook**:
+
+   * Send a response back to Dialogflow CX:
+
+   Example response JSON:
+
+   ```json
+   {
+     "fulfillment_response": {
+       "messages": [
+         {
+           "text": {
+             "text": ["This is a response from the webhook"]
+           }
+         }
+       ]
+     }
+   }
+   ```
+
+6. **Test**:
+
+   * Trigger the intent in Dialogflow CX to test the webhook and review the response.
+
+---
+
+### **Notes for GitHub:**
+
+* **Webhook URL**: Use an endpoint (e.g., Cloud Run).
+* **Parameters**: Extract parameters from user input (e.g., entities) and send them to the webhook.
+* **Backend**: Handle the webhook and detect intent in the backend.
+* **Response**: Always send a structured response with fulfillment messages back to Dialogflow CX.
+
+---
