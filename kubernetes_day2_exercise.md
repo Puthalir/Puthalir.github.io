@@ -117,77 +117,45 @@ spec:
 
 This creates a MySQL Deployment and Service. Note that **ClusterIP** means the database is accessible only within the Kubernetes cluster (ideal for internal communication).
 
-#### Python Flask Server
+#### Python Server
 
-3. **Deployment YAML for Python (Python Web Server with Flask)**
+3. **Deployment YAML for Python (Python Web Server)**
 
-Assuming you have a simple **Flask** app, create a `Dockerfile` for your Python web server:
-
-```Dockerfile
-FROM python:3.8-slim
-
-WORKDIR /app
-
-COPY app.py /app/
-
-RUN pip install flask
-
-CMD ["python", "app.py"]
 ```
-
-`app.py` could be a simple Flask application like this:
-
-```python
-from flask import Flask
-app = Flask(__name__)
-
-@app.route('/')
-def hello_world():
-    return 'Hello from Python Server!'
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
-```
-
-Once you have built the image locally (`docker build -t python-flask .`), use it in the Deployment YAML like so:
-
-```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: python-flask-server
+  name: python-http-server
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: python-flask
+      app: python-http-server
   template:
     metadata:
       labels:
-        app: python-flask
+        app: python-http-server
     spec:
       containers:
-      - name: python-flask
-        image: python-flask:latest
-        ports:
-        - containerPort: 5000
+        - name: python-http-server
+          image: python:3.8-slim
+          command: ["python", "-m", "http.server", "8000"]
+          ports:
+            - containerPort: 8000
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: python-flask-service
+  name: python-http-service
 spec:
   selector:
-    app: python-flask
+    app: python-http-server
   ports:
     - protocol: TCP
-      port: 5000
-      targetPort: 5000
+      port: 8000
+      targetPort: 8000
   type: NodePort
 ```
-
-This creates a Flask Python web server that listens on port 5000 and is exposed through a **NodePort** Service.
-
 ---
 
 ### 4. **Apply the Deployments**
@@ -197,7 +165,7 @@ Run the following commands to apply your Deployment and Service YAML files:
 ```bash
 kubectl apply -f nginx-deployment.yaml
 kubectl apply -f mysql-deployment.yaml
-kubectl apply -f python-flask-deployment.yaml
+kubectl apply -f python-deployment.yaml
 ```
 
 ---
@@ -208,7 +176,7 @@ To access the applications exposed by `NodePort`, run:
 
 ```bash
 minikube service nginx-service
-minikube service python-flask-service
+minikube service python-http-service
 ```
 
 This will open a browser with the exposed application in your default browser.
@@ -223,7 +191,7 @@ You can scale the number of Pods in your Deployment by changing the `replicas` f
 
 ```bash
 kubectl scale deployment nginx-web-server --replicas=3
-kubectl scale deployment python-flask-server --replicas=3
+kubectl scale deployment python-http-server --replicas=3
 ```
 
 This will scale your Nginx and Python web server to 3 replicas.
