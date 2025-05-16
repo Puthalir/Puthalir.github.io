@@ -241,6 +241,16 @@
 * **Entity:** Extracts structured data from user inputs (e.g., time, date, location).
 * **Slot Filling:** Ensures all required parameters are collected before responding to the user.
 * **Dialogflow ES vs CX:** ES is designed for simple bots; CX offers more robust, scalable, and version-controlled bot development with visual flow building.
+* **Dialogflow ES (Essentials)**
+
+  * Good for simpler bots and linear flows.
+  * Uses **Intents**, **Entities**, and **Contexts**.
+
+* **Dialogflow CX (Customer Experience)**
+
+  * Best for complex, multi-turn conversations.
+  * Uses **Flows**, **Pages**, **Intents**, **Entities**, and **State Machines**.
+
 
 ---
 
