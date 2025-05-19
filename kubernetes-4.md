@@ -23,15 +23,15 @@ Go to:
 	1.	In the search bar, type “Resource Groups”
 	2.	Click + Create
 	3.	Fill in:
-	•	**Subscription:** (your current subscription)
-	•	**Resource Group Name:** myResourceGroup (or your choice)
-	•	**Region:** East US 2 or Central US
+	•	Subscription: (your current subscription)
+	•	Resource Group Name: myResourceGroup (or your choice)
+	•	Region: East US 2 or Central US
 	4.	Click Review + Create → Create
 
 ⸻
 
 #### 🔹 3. Create a Kubernetes Service (AKS)
-	1.	In the top search bar, type **“Kubernetes services”**
+	1.	In the top search bar, type “Kubernetes services”
 	2.	Click + Create > Create Kubernetes cluster
 
 ⸻
@@ -39,13 +39,13 @@ Go to:
 ### ⚙️ Fill in Cluster Details (Wizard Tabs)
 
 #### ✅ Basics
-	•	**Subscription:** (your active subscription)
-	•	**Resource Group:** myResourceGroup
-	•	**Cluster name:** myAKSCluster
-	•	**Region:** East US 2 or Central US
-	•	**Kubernetes version:** Leave default
-	•	**Node size:** Standard_D2s_v3 (recommended)
-	•	**Node count:** 1
+	•	Subscription: (your active subscription)
+	•	Resource Group: myResourceGroup
+	•	Cluster name: myAKSCluster
+	•	Region: East US 2 or Central US
+	•	Kubernetes version: Leave default
+	•	Node size: Standard_D2s_v3 (recommended)
+	•	Node count: 1
 
 ❗ Avoid B-series VMs unless your subscription allows them
 ❗ Don’t enable Availability Zones unless supported in your region
