@@ -1,6 +1,6 @@
 ## 🔍 Web Scraping
 
-**Definition:** Web scraping is the automated process of extracting content or data from websites. It typically involves sending HTTP requests to webpages, parsing the HTML or JavaScript responses, and extracting the needed information using tools like BeautifulSoup, Scrapy, or Selenium. This data can be stored or processed for various use cases such as price monitoring, training data collection for AI models, or news aggregation.
+**Definition:** Web scraping is the automated process of **extracting content or data from websites**. It typically involves sending HTTP requests to webpages, parsing the HTML or JavaScript responses, and extracting the needed information using tools like BeautifulSoup, Scrapy, or Selenium. This data can be stored or processed for various use cases such as price monitoring, training data collection for AI models, or news aggregation.
 
 **Flashcard:**
 
@@ -11,7 +11,7 @@
 
 ## 🐍 Poetry
 
-**Definition:** Poetry is a Python dependency and package management tool that simplifies the management of Python projects. It uses a standardized configuration file called `pyproject.toml` to declare dependencies, manage virtual environments, and publish packages. Poetry ensures deterministic builds, improves project structure, and enhances reproducibility.
+**Definition:** Poetry is a Python **dependency and package management tool** that simplifies the management of Python projects. It uses a standardized configuration file called `pyproject.toml` to declare dependencies, manage virtual environments, and publish packages. Poetry ensures deterministic builds, improves project structure, and enhances reproducibility.
 
 **Flashcard:**
 
@@ -22,7 +22,7 @@
 
 ## 🧪 Virtual Environment
 
-**Definition:** A virtual environment is a self-contained directory that contains a Python installation and libraries specific to a project. It isolates project dependencies from the system-wide Python environment, preventing version conflicts and making development and deployment more predictable.
+**Definition:** A virtual environment is a **self-contained directory that contains a Python installation and libraries specific to a project.** It isolates project dependencies from the system-wide Python environment, preventing version conflicts and making development and deployment more predictable.
 
 **Flashcard:**
 
@@ -33,18 +33,18 @@
 
 ## ☁️ Google Cloud Platform (GCP)
 
-**Definition:** GCP is a suite of cloud computing services provided by Google that runs on the same infrastructure that Google uses internally. It offers a wide range of services for computing, data storage, data analytics, machine learning, and application development.
+**Definition:** GCP is a **suite of cloud computing services** provided by Google that runs on the same **infrastructure that Google uses internally**. It offers a wide range of services for computing, data storage, data analytics, machine learning, and application development.
 
 ---
 
 ### 🛂 IAM (Identity and Access Management)
 
-**Definition:** IAM allows administrators to manage who has what level of access to which GCP resources. It uses policies that combine roles (sets of permissions) with identities (users, groups, or service accounts).
+**Definition:** IAM allows administrators to manage who has what **level of access** to which GCP resources. It uses policies that combine roles (sets of permissions) with identities (users, groups, or service accounts).
 
 **Flashcard:**
 
 **Q:** What is IAM in GCP?\
-**A:** IAM manages access control using roles to grant permissions to users or service accounts.
+**A:** IAM manages access control using roles to **grant permissions to users or service accounts**.
 
 ---
 
@@ -55,13 +55,13 @@
 **Flashcard:**
 
 **Q:** How does access control work in GCP?\
-**A:** Access control uses IAM to assign predefined/custom roles to identities like users or service accounts.
+**A:** Access control uses IAM to **assign predefined/custom roles** to identities like users or service accounts.
 
 ---
 
 ### 🤖 Service Account
 
-**Definition:** Service accounts are special Google accounts that belong to applications or VMs instead of users. They provide identity to services for authentication and authorization when calling GCP APIs.
+**Definition:** Service accounts are special Google accounts that **belong to applications or VMs instead of users**. They provide identity to services for authentication and authorization when calling GCP APIs.
 
 **Flashcard:**
 
@@ -72,44 +72,47 @@
 
 ### 🧩 GCP APIs
 
-**Definition:** GCP provides a range of RESTful APIs that allow developers to interact with and manage GCP services such as BigQuery, Cloud Run, and Vertex AI. These APIs support automation, integration, and advanced usage scenarios.
+**Definition:** GCP provides a range of **RESTful APIs** that allow developers to **interact with and manage GCP services** such as BigQuery, Cloud Run, and Vertex AI. These APIs support automation, integration, and advanced usage scenarios.
 
 **Flashcards:**
 
-* **Vertex AI API:** Manages ML workflows like training, deployment, and predictions.
-* **Cloud SQL API:** Manages SQL instance lifecycle.
-* **BigQuery API:** Used for querying and managing datasets.
-* **Cloud Run API:** Deploys and manages containerized services.
-* **Connectors API:** Connects workflows to third-party and GCP services.
+* **Vertex AI API:** Manages **ML workflows** like training, deployment, and predictions.
+* **Cloud SQL API:** Manages **SQL instance lifecycle**.
+* **BigQuery API:** Used for **querying and managing datasets**.
+* **Cloud Run API:** **Deploys and manages containerized services**.
+* **Connectors API:** Connects **workflows to third-party and GCP** services.
 
 ---
 
 ## 📡 Networking Concepts
 
-**Definition:** Networking in cloud computing involves configuring how resources communicate internally and externally using components like VPCs, subnets, IP addresses, firewalls, and routing rules.
+**Definition:** Networking in cloud computing involves configuring how **resources communicate internally and externally** using components like VPCs, subnets, IP addresses, firewalls, and routing rules.
 
 ---
 
 ### 🌐 VPC (Virtual Private Cloud)
 
-**Definition:** A VPC is a logically isolated network in GCP where users can launch resources in a virtual network that they define and control. It includes IP ranges, subnets, and routes.
+**Definition:** A VPC is a **logically isolated network** in GCP where users can **launch resources in a virtual network** that they define and control. It includes IP ranges, subnets, and routes.
 
 **Flashcard:**
 
 **Q:** What is a VPC in GCP?\
-**A:** A private, logically isolated network in the cloud that hosts your GCP resources.
+**A:** A **private, logically isolated network** in the cloud that **hosts your GCP** resources.
 
 ---
 
 ### 🧱 Subnets
 
-**Definition:** Subnets are subdivisions of a VPC that allocate IP address ranges to GCP resources in a specific region. They help organize resources and control traffic.
+**Definition:** Subnets are **subdivisions of a VPC that allocate IP address ranges** to GCP resources in a specific region. They help **organize resources and control traffic**.
 
 ---
 
 ### 📍 Port Numbers, Domains & IP Ranges
 
-**Definition:** Ports identify specific processes or services (e.g., HTTP = port 80), domains resolve to IP addresses, and IP ranges define blocks of network addresses for routing and security.
+**Definition:** 
+Ports identify **specific processes or services** (e.g., HTTP = port 80),
+domains resolve to **IP addresses**,
+IP ranges define **blocks of network addresses for routing and security**.
 
 ---
 
@@ -121,13 +124,15 @@
 
 ### 🧭 Ingress/Egress
 
-**Definition:** Ingress is traffic entering your cloud network from external sources. Egress is traffic exiting the network to external destinations. GCP firewall rules and routing govern both.
+**Definition:** 
+Ingress is **traffic entering your cloud network from external sources**. 
+Egress is traffic **exiting the network to external destinations**. GCP firewall rules and routing govern both.
 
 ---
 
 ### 🌐 IP Address
 
-**Definition:** An IP address is a unique identifier assigned to each device connected to a network, used for routing traffic.
+**Definition:** An IP address is a **unique identifier** assigned to each **device connected to a network**, used for routing traffic.
 
 ---
 
