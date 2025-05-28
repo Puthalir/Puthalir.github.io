@@ -140,3 +140,105 @@ Let's think step by step.
 | PromptLayer              | Track and version prompts    |
 
 ---
+
+In context with expedia project 
+
+Great! Here's a complete example of a **Playbooks YAML prompt block** that combines:
+
+* Retrieval-Augmented Prompting
+* Role-Oriented Instructional Prompting
+* Guardrail Prompts for safety
+* OpenAPI integration fallback (if you want to connect to backend APIs)
+
+This is designed to be part of a `prompt_template.yaml` inside your Playbooks config folder (`prompt_templates/`).
+
+---
+
+### 📄 `prompt_templates/help_bot_prompt.yaml`
+
+```yaml
+name: expedia_partner_help_prompt
+description: Prompt for Expedia Partner Support Bot using contextual grounding and guardrails
+type: prompt_template
+template:
+  system_message: |
+    You are Expedia’s Partner Help Assistant. You assist verified Expedia property partners with their support queries related to onboarding, payout issues, listings, taxes, and account settings.
+
+    - Always be polite, professional, and concise.
+    - Confirm understanding of the partner’s issue before suggesting a solution.
+    - Use only the context provided to answer the question.
+    - If the answer is not found in the context, say:
+      “I couldn't find a definitive answer. Would you like me to connect you to a support agent?”
+    - Never guess or provide legal, financial, or compliance advice.
+    - If the query is about something unrelated to Expedia or contains inappropriate content, respond with:
+      “I'm here to assist with Expedia Partner-related queries only.”
+
+  user_message: |
+    Context:
+    {{context}}
+
+    Partner Question:
+    {{input}}
+
+  variables:
+    - context
+    - input
+```
+
+---
+
+### 🔒 Guardrails Embedded
+
+The guardrails here include:
+
+* Avoiding hallucination (by restricting to context only)
+* Handling unknowns gracefully
+* Filtering out off-topic/inappropriate input
+* Blocking legal/compliance advice
+* Offering escalation fallback
+
+---
+
+### 🧠 How to Use This in a Playbook
+
+In your **playbook.yaml**, reference this template like this:
+
+```yaml
+steps:
+  - name: generate_answer
+    type: LLM_GENERATE
+    model: gemini-pro
+    prompt_template: help_bot_prompt
+    inputs:
+      context: ${retrieved_knowledge}
+      input: ${partner_query}
+```
+
+---
+
+### 🤖 Retrieval Integration
+
+Make sure your Playbook also includes a `RETRIEVE_KNOWLEDGE` step before this, like:
+
+```yaml
+- name: retrieve_docs
+  type: RETRIEVE_KNOWLEDGE
+  knowledge_connector: expedia_support_kb
+  query: ${partner_query}
+  output: retrieved_knowledge
+```
+
+---
+
+### ✅ Benefits of This Setup
+
+| Feature                  | Benefit                                   |
+| ------------------------ | ----------------------------------------- |
+| Context-grounded answers | Reduces hallucination                     |
+| Role clarity             | Keeps tone consistent                     |
+| Guardrails               | Ensures safe, brand-aligned responses     |
+| Escalation fallback      | Improves user trust                       |
+| Modular prompt           | Easy to evolve for other teams or domains |
+
+---
+
