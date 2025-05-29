@@ -71,3 +71,20 @@ We had a dedicated staging environment where we tested new prompts, document cha
 I’d probably invest earlier in a more centralized feedback loop for prompt performance—like having UI buttons for users to rate answers or flag confusion. Also, I’d explore using vector databases like **Pinecone or Weaviate** instead of relying only on BigQuery for embeddings, since those offer faster semantic search at scale. Otherwise, I think the stack we chose—ADK, DialogFlow CX, LangChain, GKE—was solid and flexible.
 
 ---
+### ✅ **11. What specific GKE settings did you configure for autoscaling?**
+
+We used Horizontal Pod Autoscalers configured to scale based on CPU > 70% or memory > 75% utilization. We also had min/max replica settings to maintain availability during off-hours. Liveness and readiness probes were configured in our deployment YAMLs to ensure stability during autoscaling events.
+
+---
+### 12. How did you structure your LangChain agent?
+
+We used a Tool-Using LangChain agent. It could access a document retriever tool (based on FAISS with GCS documents), a fallback knowledge base, and an API fetcher to check partner metadata. The agent followed a simple reasoning loop: understand → retrieve → reason → respond. We kept the logic modular and extendable for future tool integrations.
+
+---
+### 13. Did you try few-shot or chain-of-thought prompting, or stick to zero-shot? Why?
+
+We primarily used zero-shot prompts with clear instructions and context retrieved via RAG. For most support queries, the pattern of responses was predictable enough that few-shot wasn't necessary. However, for more nuanced intents like refund policies, we experimented with chain-of-thought to improve step-by-step reasoning.
+
+### 14. How did you control the tone of the LLM responses?
+
+We embedded tone guidelines directly into our prompt templates, instructing the model to “respond formally, concisely, and with empathy.” We also tested outputs with real queries and tuned them iteratively based on partner feedback and support team inputs. In some cases, we post-processed responses in Python to remove filler words or reformat unclear answers.
