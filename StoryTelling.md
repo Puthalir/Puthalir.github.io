@@ -50,6 +50,51 @@ On the infrastructure side, everything is containerized and deployed on **GKE**,
 Overall, this project has been one of the most rewarding ones for me. Not only did we reduce the average time to resolve partner issues by about 20%, but we also built a system that’s reliable, smart, and improving every day with feedback and iteration. It was a full-stack AI problem—conversation design, prompt engineering, cloud deployment, and continuous learning—and I got to own and contribute across all those layers.
 
 ---
+### **Updated Expedia Story**
+
+Sure, I’d love to share one of the most impactful projects I’ve worked on at Expedia—it involved building an intelligent conversational assistant that helps our hotel and travel partners with their support needs directly inside the Partner Central portal.
+
+The issue we wanted to solve was simple but high-impact. Our partners often raised common queries like “Why isn’t my hotel showing up in search?” or “How do I update my pricing?” These were mostly handled by manual agents or static FAQ pages, which led to delays and inconsistent responses. So, we set out to build an AI assistant, which we called the “Help Me Bot”, that could understand natural questions and give fast, accurate, and context-aware responses.
+
+Instead of manually configuring flows through the GCP Console, we followed a more modular and scalable approach. We used Google’s Application Development Kit (ADK) to define our **DialogFlow CX** agents using YAML configuration files. These **YAML files described the agent’s intents, flows, route groups, and fulfillment logic declaratively**. Using the **ADK CLI**, we could version-control these agents, deploy them reliably across environments, and quickly iterate as the bot evolved. This made the entire DialogFlow CX configuration process much more manageable, especially with a growing number of intents and conversational routes.
+
+For example, one high-volume use case was the listing_not_found intent, triggered when a partner asked something like, “Why isn’t my property showing up in search?” Once DialogFlow matched this intent, the bot needed to dig into backend data to figure out the root cause.
+
+That’s where we implemented **Python-based webhook services using the Flask framework**. These services were **containerized using Docker, deployed on Google Kubernetes Engine (GKE)**, and exposed through secure endpoints. The webhook would call internal Expedia APIs to check listing status, image uploads, rate plans, and more.
+
+If the issue was obvious—say, a missing image—the webhook directly crafted a response and passed it back to DialogFlow CX using the structured webhook response format. But when the answer wasn’t clear, we had to rely on deeper reasoning—so we integrated Large Language Models (LLMs).
+
+To handle this smoothly, we **used LangChain in Python to build custom LangChain agents**. These agents orchestrated several steps:
+
+They would retrieve relevant documentation or internal knowledge using **RAG (Retrieval-Augmented Generation)**.
+
+They then constructed detailed, context-rich prompts combining system data, retrieved documents, and the user’s query.
+
+Finally, they sent these prompts to models like OpenAI’s GPT-4 or Google’s Gemini, hosted on Vertex AI.
+
+LangChain allowed us to define memory, tool use, and control flow—all within a single agent. These agents were also deployed on GKE, ensuring scalable and low-latency performance in production.
+
+**Prompt engineering** played a critical role here. We followed a structured approach:
+
+First, with **RAG prompting, we pulled relevant content from our document store—such as Expedia policy, partner help guides, or onboarding docs—using semantic search. The documents were stored in Google Cloud Storage and embedded using Vertex AI’s Matching Engine, then indexed in BigQuery.**
+
+Next, we used **instructional prompts to give the model strict behavior guidelines. A typical system prompt would say, “You are an Expedia partner support assistant. Only answer based on the provided documents. Keep your tone formal and concise.”**
+
+To ensure safety, we embedded **guardrail prompts, like: “If you don’t find a reliable answer, say: ‘Please contact Expedia Partner Support for further help.’” This stopped the model from guessing and gave us more control over its behavior.**
+
+All these prompts were dynamically created in Python, depending on the user query, matched intent, and retrieved content.
+
+To make sure everything was working as expected, **we logged all interactions into BigQuery** and built performance dashboards in Tableau. We tracked things like intent match success, LLM response times, fallback rates, and overall query resolution rates. This data allowed us to continuously improve the bot flows, prompts, and training data.
+
+Recently, we started taking this further by enabling agentic capabilities using **Google Playbooks**, part of the GCP ADK ecosystem. Unlike simple Q&A flows, Playbooks allow our bots to follow a sequence of steps—like checking the listing, validating images, suggesting actions, and even triggering help tickets. These are defined in YAML-based Playbook files and managed using the same CLI workflows, giving us full flexibility to create multi-step task-oriented bots.
+
+From an ops standpoint, **we automated the entire CI/CD pipeline using GitHub Actions and Google Cloud Build**, with container builds pushed to Artifact Registry and deployed to GKE. We **used Horizontal Pod Autoscaling (HPA) to handle traffic spikes**—especially useful during holidays when support volumes go up.
+
+The results were fantastic. The bots now resolve around 60–70% of partner queries autonomously, and we’ve reduced the average resolution time by about 20%. More importantly, the system keeps getting smarter, more contextual, and more useful as we iterate.
+
+This project really pushed me to work across the full GenAI stack—from defining YAML agents using ADK, building webhook backends, orchestrating LLM agents with LangChain, designing safe and structured prompts, and deploying everything using modern Kubernetes and CI/CD pipelines. It’s been a perfect blend of engineering, AI, and product thinking.
+
+---
 
 ## 🕐 **Maruti Suzuki (1 min)**
 
